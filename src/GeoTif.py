@@ -92,6 +92,9 @@ def getGeometryBbox(geometry):
             lon, lat, z = ring.GetPoint(p)
             pointsX.append(lon)
             pointsY.append(lat)
+    else:
+        print("ERROR: Geometry type %s isn't handle"%geometry.GetGeometryName())
+        exit()
     return (min(pointsX), min(pointsY), max(pointsX), max(pointsY))
 
 def uncompressMaps():
